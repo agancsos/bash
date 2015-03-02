@@ -1,0 +1,14 @@
+#!/bin/bash
+
+function unmute(){
+        osascript -e \"set Volume 3\"
+
+        if [ $1 ]; then
+                osascript -e \"set Volume $1\"
+        fi
+}
+
+unmute $1
+
+#This script usually requires sudo
+#chmod 755 for osascript to allow all users to run

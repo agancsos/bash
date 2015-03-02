@@ -1,0 +1,20 @@
+#!/bin/bash
+function search_dir(){
+ for files in $1
+  do
+   echo \"--->$files\"
+   if [ -f \"${files}\" ]; then
+    test_torrent=${files//torrent/}
+    if [ \"$($echo $test_torrent|tr [:upper:] [:lower:])\" != \"$(echo $files|tr [:upper:] [:lower:])\" ]; then 
+     rm \"$files\"
+     echo Deleted $files
+    fi
+   elif [ -d \"${files}\" ]; then
+    search_dir \"$files/*\"
+   fi
+   echo $files
+ done
+}
+
+search_dir /*
+

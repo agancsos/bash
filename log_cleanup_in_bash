@@ -1,0 +1,12 @@
+#!/bin/bash
+function clean_logs(){
+ rm /var/log/*.log.*
+ rm /var/log/*.bz2
+ rm /var/log/*.asl
+ rm /var/log/asl/*.asl
+ rm /varl/log/performance/*.asl
+ rm /var/log/DiagnosticMessages/*.asl
+ rm -fr /var/log/asl/AUX*
+}
+clean_logs
+echo \"Complete!\"

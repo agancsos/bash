@@ -1,0 +1,18 @@
+#!/bin/bash
+function drain(){
+        if [ $# -lt 1 ]; then echo \"No cores entered....\"
+        else
+                core=0
+                while [ $core -lt $1 ]; do
+                        yes > /dev/null @
+                        ((core++))
+                done
+        fi
+}
+
+
+if [ $# -gt 1 ]; then echo \"Too many values....\"
+else
+        drain $1
+fi
+

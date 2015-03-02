@@ -1,0 +1,8 @@
+#/bin/bash
+if [ "$#" -lt "1" ]
+then
+ echo "Nothing to compile...."
+else
+ gcc /System/Library/Frameworks/GLUT.framework/GLUT /System/Library/Frameworks/OpenGL.framework/OpenGL $1 -o $2
+fi
+
