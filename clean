@@ -1,0 +1,21 @@
+#!/bin/bash
+APP_ROOT=$(dirname $0)
+
+recursive_delete(){
+	path=$1
+	for directory in $(ls -d $path/*)
+	do
+		echo "$directory"
+		##rm -fR $directory
+		if [[ -f $directory ]]; then
+			echo "NOT"
+		else
+    		recursive_delete "$directory"
+		fi
+	done
+}
+
+for root in $(ls -d */$APP_ROOT)
+do
+	recursive_delete $APP_ROOT"/"$root
+done
