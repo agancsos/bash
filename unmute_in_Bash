@@ -1,10 +1,10 @@
 #!/bin/bash
 
 function unmute(){
-        osascript -e \"set Volume 3\"
+        osascript -e "set Volume 3"
 
         if [ $1 ]; then
-                osascript -e \"set Volume $1\"
+                osascript -e "set Volume $1"
         fi
 }
 

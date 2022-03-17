@@ -1,12 +1,12 @@
 #!/bin/bash
-if [ \"$#\" -gt 0 ]
+if [ "$#" -gt 0 ]
 then
-        for file in \"$@\"
+        for file in "$@"
         do
                 echo >> $file
         done
-elif [ \"$#\" -lt 1 ]
+elif [ "$#" -lt 1 ]
 then
-        echo \"No files to create...\"
+        echo "No files to create..."
 fi
 

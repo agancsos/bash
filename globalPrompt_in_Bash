@@ -1,5 +1,5 @@
 function globalPrompt(){
- if [ \"$#\" -gt 0 ]; then
-  echo \"export PS1=\" >> /etc/profile
-  echo \"New prompt will show at next login...
+ if [ "$#" -gt 0 ]; then
+  echo "export PS1=" >> /etc/profile
+  echo "New prompt will show at next login...
 }

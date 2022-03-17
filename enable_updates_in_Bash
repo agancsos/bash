@@ -1,20 +1,19 @@
 #!/bin/bash
-
 function enable(){
         mv /etc/apt/sources.list.backup /etc/apt/sources.list
-        echo \"Enabled\"
+        echo "Enabled"
 }
 
 function disable(){
         mv /etc/apt/sources.list /etc/apt/sources.list.backup
-        echo \"Disabled\"
+        echo "Disabled"
 }
 
-if [ \"$#\" -lt 1 ] || [ \"$#\" -gt 2 ]; then 
-        echo \"Error...Please try again.\"
+if [ "$#" -lt 1 ] || [ "$#" -gt 2 ]; then 
+        echo "Error...Please try again."
 else
-        if [ \"$@\" == \"enable\" ]; then enable
-                elif [ \"$@\" == \"disable\" ]; then disable 
+        if [ "$@" == "enable" ]; then enable
+                elif [ "$@" == "disable" ]; then disable 
         fi
 fi
 

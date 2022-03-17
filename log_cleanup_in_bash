@@ -9,4 +9,4 @@ function clean_logs(){
  rm -fr /var/log/asl/AUX*
 }
 clean_logs
-echo \"Complete!\"
+echo "Complete!"
